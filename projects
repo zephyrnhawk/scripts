@@ -1,0 +1,4 @@
+Ideas
+1.  use www-data user to run Bash commands inside a screen running a minecraft server
+2. check server status, both physical server and running gameservers
+3. check gameserver users. read users to impliment with #1
