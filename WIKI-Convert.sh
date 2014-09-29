@@ -113,7 +113,7 @@ chmod 775 alert.bat
 rm alert.bat
 # rename new csv to user input
 printf "Wiki to HTML conversion complete. \n"
-echo "Please enter the new file name. No Equals Please"
+echo "Please enter the new file name. (No spaces please)"
 read fname
 mv html.csv $fname.csv
 clear
