@@ -1,10 +1,13 @@
 #!/bin/sh
+# For this to work the Minecraft server must be ran inside a screen that was created by the www-data user, or the user that runs
+# the webserver (www-data by default). use "sudo -u www-data screen -A -m -d -S minecraft" to start the screen through www-data.
+# Then use "sudo -u www-data screen -x minecraft" to enter the screen and start the server.
     echo "Content-type: text/html\n"     
     # read in our parameters
     CMD=`echo "$QUERY_STRING" | sed -n 's/^.*cmd=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
     FOLDER=`echo "$QUERY_STRING" | sed -n 's/^.*folder=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"| sed "s/%2F/\//g"`
     FOLDER1=`echo "$QUERY_STRING" | sed -n 's/^.*folder1=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"| sed "s/%2F/\//g"`
-FOLDER2=`echo "$QUERY_STRING" | sed -n 's/^.*folder2=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"| sed "s/%2F/\//g"`
+    FOLDER2=`echo "$QUERY_STRING" | sed -n 's/^.*folder2=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"| sed "s/%2F/\//g"`
 
     # our html header
     echo "<style>\n#submit {\n\twidth: 140px;\n\theight: 60px;\nfont-size: 1.3em;\n}</style>"   
